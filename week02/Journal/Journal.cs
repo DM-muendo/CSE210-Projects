@@ -38,5 +38,5 @@ public class Journal
         {
             _entries.Add(Entry.FromFileString(line));
         }
-    }
+    } 
 }
