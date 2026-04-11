@@ -1,0 +1,26 @@
+using System;
+
+public class EternalGoal : Goal
+{
+    private int _timesRecorded;
+
+    public EternalGoal(string name, string description, int points, int timesRecorded = 0)
+        : base(name, description, points)
+    {
+        _timesRecorded = timesRecorded;
+    }
+
+    public override void RecordEvent()
+    {
+        _timesRecorded++;
+    }
+
+    public override bool IsComplete() => false;
+
+    public override string GetStatus() => $"[∞] Completed {_timesRecorded} times";
+
+    public override string GetStringRepresentation()
+    {
+        return $"EternalGoal:{_name},{_description},{_points},{_timesRecorded}";
+    }
+}
